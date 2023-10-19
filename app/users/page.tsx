@@ -1,11 +1,16 @@
 import UserTable from './UserTable';
 
-const UserPage = async () => {
+interface Props {
+	searchParams : {
+		sortOrder: string;
+	}
+}
+
+const UserPage = async ({searchParams: {sortOrder}}: Props) => {
 	return (
 		<>
-			<h1>Users</h1>
-			<p>{new Date().toLocaleTimeString()}</p>
-			<UserTable />
+			<h1 className='text-3xl mb-5'>Users</h1>
+			<UserTable sortOrder={sortOrder} />
 		</>
 	);
 };
