@@ -1,14 +1,21 @@
-'use client'
+'use client';
 
 import React from 'react';
 
 interface Props {
 	text: string;
-    onClick : ()=> void;
+	onClick: () => void;
 }
 
 const Button = ({ text, onClick }: Props) => {
-	return <button className='btn' onClick={onClick}>{text}</button>;
+	return (
+		<button
+			className='btn'
+			onClick={onClick}
+		>
+			{text}
+		</button>
+	);
 };
 
 export default Button;
