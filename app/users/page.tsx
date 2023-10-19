@@ -1,16 +1,19 @@
+import { Suspense } from 'react';
 import UserTable from './UserTable';
 
 interface Props {
-	searchParams : {
+	searchParams: {
 		sortOrder: string;
-	}
+	};
 }
 
-const UserPage = async ({searchParams: {sortOrder}}: Props) => {
+const UserPage = async ({ searchParams: { sortOrder } }: Props) => {
 	return (
 		<>
 			<h1>Users</h1>
-			<UserTable sortOrder={sortOrder} />
+			{/* <Suspense fallback={<p> Loading ... </p>}> */}
+				<UserTable sortOrder={sortOrder} />
+			{/* </Suspense> */}
 		</>
 	);
 };
