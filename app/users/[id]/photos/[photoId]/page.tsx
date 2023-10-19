@@ -6,7 +6,11 @@ interface Props {
 }
 
 const UserPhotoPage = ({ params: { photoId, id } }: Props) => {
-	return <div>UserPhotoPage {id} {photoId}</div>;
+	return (
+		<div>
+			UserPhotoPage {id} {photoId}
+		</div>
+	);
 };
 
 export default UserPhotoPage;
