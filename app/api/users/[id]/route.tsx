@@ -18,3 +18,8 @@ export async function PUT(request: NextRequest, { params }: Props) {
 
 	return NextResponse.json({ id: 1, name: body.name });
 }
+
+export async function Delete(request: NextRequest, { params }: Props) {
+	if (params.id > 10) return NextResponse.json({ error: 'user not found' }, { status: 404 });
+	return NextResponse.json({});
+}
