@@ -28,19 +28,25 @@ export async function PUT(request: NextRequest, { params }: Props) {
 	if (!user) return NextResponse.json({ error: 'user not found' }, { status: 404 });
 
 	const updatedUser = await prisma.user.update({
-		where: {
-			id: user.id,
-		},
-		data : {
+		where : {id: user.id},
+		data  : {
 			name : body.name,
 			email: body.email,
 		}
-	})
+	});
 
 	return NextResponse.json(updatedUser);
 }
 
 export async function Delete(request: NextRequest, { params }: Props) {
-	if (params.id > 10) return NextResponse.json({ error: 'user not found' }, { status: 404 });
+	const user = await prisma.user.findUnique({
+		where: {id: parseInt(params.id)}
+	});
+
+	if (!user) return NextResponse.json({ error: 'user not found' }, { status: 404 });
+
+	await prisma.user.delete({
+		where : {id: user.id}
+	})
 	return NextResponse.json({});
 }
