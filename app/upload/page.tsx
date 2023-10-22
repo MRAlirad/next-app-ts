@@ -21,7 +21,11 @@ const Upload = () => {
 			)}
 			<CldUploadWidget
 				uploadPreset='bnj9l7dk'
+				options={{
+					sources: ['local'],
+				}}
 				onUpload={(result, widget) => {
+					console.log(result);
 					if (result.event === 'success') return;
 					const info = result.info as CloudinaryResult;
 					setPublicId(info.public_id);
