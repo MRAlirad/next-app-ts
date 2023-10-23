@@ -3,7 +3,7 @@ import React from 'react';
 
 const Navbar = () => {
 	return (
-		<div className='flex bg-slate-200 p-5 '>
+		<div className='flex space-x-3 bg-slate-200 p-5 '>
 			<Link
 				href='/'
 				className='mr-5'
@@ -17,6 +17,11 @@ const Navbar = () => {
 			>
 				{' '}
 				users{' '}
+			</Link>
+			<Link
+				href='/api/auth/signin'
+			>
+				Login
 			</Link>
 		</div>
 	);
