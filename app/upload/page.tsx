@@ -24,8 +24,8 @@ const Upload = () => {
 				options={{
 					sources: ['local'],
 				}}
-				onUpload={(result, widget) => {
-					console.log(result);
+				onUpload={(result, widget) =>
+				{
 					if (result.event === 'success') return;
 					const info = result.info as CloudinaryResult;
 					setPublicId(info.public_id);
