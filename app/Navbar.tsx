@@ -12,18 +12,16 @@ const Navbar = () => {
 				href='/'
 				className='mr-5'
 			>
-				{' '}
-				Next js{' '}
+				Next js
 			</Link>
 			<Link
 				href='/users'
 				className='mr-5'
 			>
-				{' '}
-				users{' '}
+				users
 			</Link>
-			{status === 'loading' && <div>Loading...</div> }
-			{status === 'authenticated' && <div>{session.user!.name}</div> }
+			{status === 'loading' && <div>Loading...</div>}
+			{status === 'authenticated' && <div>{session.user!.name}</div>}
 			{status === 'unauthenticated' && <Link href='/api/auth/signin'>Login</Link>}
 		</div>
 	);
