@@ -5,7 +5,7 @@
 import { Metadata } from 'next';
 import { useState } from 'react';
 // import dynamic from 'next/dynamic';
-import _ from 'loadash';
+// import _ from 'loadash';
 // const HeavyComponent = dynamic(
 // 	()=> import('./components/HeavyComponent'),
 // 	{
